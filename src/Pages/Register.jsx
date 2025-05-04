@@ -126,7 +126,7 @@ const Register = () => {
                   </h3>
                   <Form onSubmit={submitForm}>
                     <Form.Group className="mb-2" controlId="formName">
-                      <Form.Label>Username</Form.Label>
+                      <Form.Label className="w-100 text-start">Username</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder="Enter Username"
@@ -138,7 +138,7 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-2" controlId="formEmail">
-                      <Form.Label>Email</Form.Label>
+                      <Form.Label className="w-100 text-start">Email</Form.Label>
                       <Form.Control
                         type="email"
                         placeholder="Enter Email"
@@ -150,7 +150,7 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-2" controlId="formPassword">
-                      <Form.Label>Password</Form.Label>
+                      <Form.Label className="w-100 text-start">Password</Form.Label>
                       <Form.Control
                         type="password"
                         placeholder="Enter password"
@@ -162,7 +162,7 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-2" controlId="formConfirmPassword">
-                      <Form.Label>Confirm Password</Form.Label>
+                      <Form.Label className="w-100 text-start">Confirm Password</Form.Label>
                       <Form.Control
                         type="password"
                         placeholder="Enter Confirm password"
@@ -175,8 +175,8 @@ const Register = () => {
                       
                     </Form.Group>
 
-                    <Form.Group className="mb-2">
-                      <Form.Label>Gender</Form.Label>
+                    <Form.Group className="mb-2 w-100 text-start">
+                      <Form.Label >Gender</Form.Label>
                       <div>
                         <Form.Check
                           inline
@@ -200,7 +200,7 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-2" controlId="formTextarea">
-                      <Form.Label>Write About Yourself</Form.Label>
+                      <Form.Label className="w-100 text-start">Write About Yourself</Form.Label>
                       <Form.Control
                         as="textarea"
                         rows={4}

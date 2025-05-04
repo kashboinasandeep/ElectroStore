@@ -149,7 +149,7 @@ const Login = () => {
 
                 <Form onSubmit={submitForm} noValidate>
                   <Form.Group className="mb-3" controlId="formUsername">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label className="w-100 text-start">Email</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="Enter here"
@@ -159,7 +159,7 @@ const Login = () => {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className="">Password</Form.Label>
                     <Form.Control
                       type="password"
                       placeholder="Enter here"

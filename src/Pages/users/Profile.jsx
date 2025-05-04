@@ -138,7 +138,7 @@ const Profile = () => {
    }
 
    //clear image
-   const clearImage =(event) =>{
+   const clearImage =(event) =>{[[]]
     setImage({
       placeholder:defaultImage,
       file:null

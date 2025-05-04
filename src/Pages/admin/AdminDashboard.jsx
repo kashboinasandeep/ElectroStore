@@ -2,6 +2,8 @@ import { Navigate, Outlet } from "react-router-dom";
 import { isAdminUser } from "../../Auth/HelperAuth";
 import { useContext } from "react";
 import UserContext from "../../Context/UserContext";
+import { Col, Container, Row } from "react-bootstrap";
+import SideMenu from "../../Components/admin/SideMenu";
 
 const AdminDashboard = ()=>{
 
@@ -10,9 +12,30 @@ const AdminDashboard = ()=>{
     const dashboardView = ()=>{
         return(
             <div>
-            <h1>This is AdminDashboard</h1>
-            <Outlet />
-        </div>
+                <Container className="p-5" >
+                    <Row>
+
+                    {/* side menu */}
+                    <Col md={{
+                        span:2,
+                        offset:1
+                    }}
+                    className=""
+                    >
+                    <SideMenu />
+                    </Col>
+
+                
+                       
+                    {/* content area */}
+                    <Col md={9} className="ps-3 pt-2" >
+                   
+                   <Outlet />
+                    </Col>
+
+                    </Row>
+                </Container>
+            </div>
         )
     }
 
