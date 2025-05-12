@@ -159,7 +159,7 @@ const Login = () => {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formPassword">
-                    <Form.Label className="">Password</Form.Label>
+                    <Form.Label className="w-100 text-start">Password</Form.Label>
                     <Form.Control
                       type="password"
                       placeholder="Enter here"

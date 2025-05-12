@@ -7,7 +7,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 
 const SideMenu = () => {
   return (
-    <ListGroup variant="flush" className="shadow">
+    <ListGroup variant="flush" className="shadow sticky-top">
       {/* Common menu items */}
       {[
         { to: "/admin/home", icon: <FaHome size={20} />, text: "Home" },

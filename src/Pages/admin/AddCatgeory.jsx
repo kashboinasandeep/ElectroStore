@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Card, CardBody, Container, Form, FormGroup } from "react-bootstrap";
+import { Button, Card, CardBody, Container, Form, FormGroup, Spinner } from "react-bootstrap";
 import { toast } from "react-toastify";
-import { addCategory } from "../../Service/ProductService";
+import { addCategory } from "../../Service/CategoryService";
 
 const AddCategory = () => {
 
@@ -10,6 +10,8 @@ const AddCategory = () => {
         description:'',
         coverImage:''
     });
+
+    const [loading,setLoading]=useState(false);
 
     // change fields of AddCategory
     const handleFieldChange =(event,property)=>{
@@ -46,19 +48,37 @@ const AddCategory = () => {
 
 
             //call server api
+            setLoading(true);
             addCategory(category)
             .then((data)=>{
                 //success
                 toast.success("category added successfully!!!");
                 console.log(data);
+                setCategory({
+                  title:'',
+                  description:'',
+                  coverImage:''
+                })
             })
             .catch(error=>{
                 toast.error("error in adding category");
                 console.log(error);
             })
+            .finally(()=>{
+              setLoading(false);
+            });
 
 
     }
+
+    const clearForm = (event)=>{
+      event.preventDefault();
+      setCategory({
+        title:'',
+        description:'',
+        coverImage:''
+      });
+    };
 
 
   return (
@@ -96,8 +116,22 @@ const AddCategory = () => {
               </FormGroup>
 
               <Container className="mt-3">
-                <Button type="submit" variant="success" size="md">Add Category</Button>
-                <Button className="ms-2" variant="danger" size="md">Clear</Button>
+
+              {/* Add Category button */}
+                <Button type="submit" variant="success" size="md" disabled={loading}>
+                  <Spinner
+                    animation={'border'}
+                    size={'sm'}
+                    className="me-2"
+                    hidden={!loading}
+                  />
+                  <span hidden={!loading}>Please Wait</span>
+                 <span hidden={loading}> Add Category</span>
+                  
+                  </Button>
+
+                  {/* Clear button */}
+                <Button className="ms-2" variant="danger" size="md" onClick={clearForm}>Clear</Button>
               </Container>
             </Form>
           </CardBody>

@@ -1,0 +1,10 @@
+.category-image{
+    height:250px;
+    width:100%;
+    object-fit: contain;
+}
+.default-image{
+    height:200px;
+    width:100%;
+    object-fit: contain;
+}
